@@ -1,4 +1,6 @@
-# PuppetPipeline
+# Puppet Pipeline
+
+## Testing project will utilize basic mean stack, and amazon aws ec2 servers being fed from puppet pipeline and testing all unit / e2e before dedicated build. 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.2.
 
@@ -6,11 +8,8 @@ This project is a testing ground for puppet pipeling utilizing a basic mean stac
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Mean stack will launch node on bin/www. To start localhost development run 'ng start' This will compile the Angular code and the API. Frontend will be accessible at localhost:3000, API will be visible at localhost:3000/api
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
