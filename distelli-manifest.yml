@@ -1,4 +1,4 @@
-mtlaney/puppet-pipeline:
+mtlaney/puppet-pipeline-test:
   Build:
     - npm install
   PkgInclude:
