@@ -1,0 +1,123 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/bases']"
+    ><mat-icon>list</mat-icon></a
+  >
+</div>
+<form [formGroup]="baseForm" (ngSubmit)="onFormSubmit(baseForm.value)">
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="city"
+      formControlName="city"
+      [errorStateMatcher]="matcher"
+    />
+    <mat-error>
+      <span *ngIf="!baseForm.get('city').valid && baseForm.get('city').touched"
+        >Please enter city</span
+      >
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="state"
+      formControlName="state"
+      [errorStateMatcher]="matcher"
+    />
+    <mat-error>
+      <span
+        *ngIf="!baseForm.get('state').valid && baseForm.get('state').touched"
+        >Please enter base state</span
+      >
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="acres"
+      formControlName="acres"
+      [errorStateMatcher]="matcher"
+    />
+    <mat-error>
+      <span
+        *ngIf="!baseForm.get('acres').valid && baseForm.get('acres').touched"
+        >Please enter base acres</span
+      >
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea
+      matInput
+      placeholder="Description"
+      formControlName="description"
+      [errorStateMatcher]="matcher"
+    ></textarea>
+    <mat-error>
+      <span
+        *ngIf="
+          !baseForm.get('description').valid &&
+          baseForm.get('description').touched
+        "
+        >Please enter base Description</span
+      >
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="employees"
+      formControlName="employees"
+      [errorStateMatcher]="matcher"
+    />
+    <mat-error>
+      <span
+        *ngIf="
+          !baseForm.get('employees').valid && baseForm.get('employees').touched
+        "
+        >Please enter employees</span
+      >
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="Manager"
+      formControlName="manager"
+      [errorStateMatcher]="matcher"
+    />
+    <mat-error>
+      <span
+        *ngIf="
+          !baseForm.get('manager').valid && baseForm.get('manager').touched
+        "
+        >Please enter Manager</span
+      >
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="Contact"
+      formControlName="contact"
+      [errorStateMatcher]="matcher"
+    />
+    <mat-error>
+      <span
+        *ngIf="
+          !baseForm.get('contact').valid && baseForm.get('contact').touched
+        "
+        >Please enter contact number</span
+      >
+    </mat-error>
+  </mat-form-field>
+  <div class="button-row">
+    <button
+      type="submit"
+      [disabled]="!baseForm.valid"
+      mat-raised-button
+      color="primary"
+    >
+      <mat-icon>save</mat-icon>
+    </button>
+  </div>
+</form>
