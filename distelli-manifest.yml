@@ -4,8 +4,8 @@ mtlaney/puppet-pipeline-test:
   PkgInclude:
     - '*'
   PreInstall:
-    - sudo apt-get -y update
-    - sudo apt-get -y install nodejs
+    - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+    - nvm install v10.15.0
   Env:
     - PORT: '3000'
   Exec:
