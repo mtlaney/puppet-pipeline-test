@@ -1,0 +1,12 @@
+mtlaney/puppet-pipeline:
+  Build:
+    - npm install
+  PkgInclude:
+    - '*'
+  PreInstall:
+    - sudo apt-get -y update
+    - sudo apt-get -y install nodejs
+  Env:
+    - PORT: '3000'
+  Exec:
+    - npm start
