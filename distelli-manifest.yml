@@ -1,6 +1,5 @@
 mtlaney/puppet-pipeline-test:
   Build:
-    - npm run test
 
   PkgInclude:
     - '*'
@@ -15,5 +14,6 @@ mtlaney/puppet-pipeline-test:
   Exec:
     - source ~/.nvm/nvm.sh
     - nvm use v10.15.0
+    - ng test
     - npm start
     # comment
