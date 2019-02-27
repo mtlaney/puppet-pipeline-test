@@ -1,5 +1,6 @@
 mtlaney/puppet-pipeline-test:
   Build:
+    - npm run test
 
   PkgInclude:
     - '*'
