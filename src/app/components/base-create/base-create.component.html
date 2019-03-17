@@ -3,6 +3,7 @@
     ><mat-icon>list</mat-icon></a
   >
 </div>
+<div class="clear">
 <form [formGroup]="baseForm" (ngSubmit)="onFormSubmit(baseForm.value)">
   <mat-form-field class="example-full-width">
     <input
@@ -110,6 +111,7 @@
       >
     </mat-error>
   </mat-form-field>
+
   <div class="button-row">
     <button
       type="submit"
@@ -121,3 +123,4 @@
     </button>
   </div>
 </form>
+</div>

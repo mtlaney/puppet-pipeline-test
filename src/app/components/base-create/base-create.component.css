@@ -15,3 +15,8 @@
 .button-row {
   margin: 10px 0;
 }
+.clear{
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}

@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatInputModule,
+  MatToolbarModule,
   MatPaginatorModule,
   MatProgressSpinnerModule,
   MatSortModule,
@@ -67,6 +68,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     MatInputModule,
     MatTableModule,
+    MatToolbarModule,
     MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule,
