@@ -10,6 +10,7 @@ mtlaney/puppet-pipeline-test:
     - sudo apt-get purge nodejs npm
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
     - nvm install node
+    - sudo apt-get -y install npm
     - echo "--Building--"
     - npm install
     - echo "--Testing--"
@@ -32,7 +33,7 @@ mtlaney/puppet-pipeline-test:
     - export NVM_DIR=$HOME/.nvm 
     - . $NVM_DIR/nvm.sh  # This loads nvm
     - nvm install node
-    - export CHROME_BIN=/usr/bin/chromium-browser
+    - sudo apt install -y chromium-browser
 
 
   PostInstall:
