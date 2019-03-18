@@ -22,7 +22,6 @@ mongoose
     'mongodb://localhost/puppet-pipeline',
     { useNewUrlParser: true }
   )
-  .then(() => console.log('mongoose connection successful'))
   .catch(err => console.error(err));
 
 // handling 404
