@@ -1,3 +1,25 @@
+# mtlaney/puppet-pipeline-test:
+#   Build:
+
+#   PkgInclude:
+#     - '*'
+#   PreInstall:
+#     - npm install npm -g
+#     - npm install
+#     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+#     - source ~/.nvm/nvm.sh
+#     - nvm install v10.15.0
+#   Env:
+#     - PORT: '3000'
+#   Exec:
+#     - source ~/.nvm/nvm.sh
+#     - nvm use v10.15.0
+#     - ng test
+#     - npm start
+    # comment
+
+
+
 mtlaney/puppet-pipeline-test:
 
   PreRelease:
@@ -29,13 +51,17 @@ mtlaney/puppet-pipeline-test:
     - sudo apt-get -y install nodejs
     - echo "-Installing npm-"
     - sudo apt-get -y install npm
+    - echo "-Installing nvm-"
+    - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+    - source ~/.nvm/nvm.sh
+    - nvm install v10.15.0
 
   PostInstall:
     - echo "Begin PostInstall"
     - npm install
     
   Env:
-    - PORT: 3000
+    - PORT: '3000'
     
   Exec:
     - /usr/bin/nodejs app.js
