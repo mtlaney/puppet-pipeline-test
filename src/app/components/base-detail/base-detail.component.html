@@ -11,22 +11,13 @@
     <mat-card-subtitle>{{ base.description }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
-    <dl>
-      <dt>City:</dt>
-      <dd>{{ base.city }}</dd>
-      <dt>State:</dt>
-      <dd>{{ base.state }}</dd>
-      <dt>Manager:</dt>
-      <dd>{{ base.manager }}</dd>
-      <dt>Acres:</dt>
-      <dd>{{ base.acres }}</dd>
-      <dt>Contact:</dt>
-      <dd>{{ base.contact }}</dd>
-      <dt>Employees:</dt>
-      <dd>{{ base.employees }}</dd>
-      <dt>Update Date:</dt>
-      <dd>{{ base.updated_date | date }}</dd>
-    </dl>
+    <p>City: {{base.city}}</p>
+    <p>State: {{base.state}}</p>
+    <p>Manager: {{base.manager}}</p>
+    <p>Acres: {{base.acres}}</p>
+    <p>Contact: {{base.contact}}</p>
+    <p>Employees: {{base.employees}}</p>
+    <p>Update Date: {{base.updated_date}}</p>
   </mat-card-content>
   <mat-card-actions>
     <a mat-raised-button color="primary" [routerLink]="['/base-edit', base._id]"
