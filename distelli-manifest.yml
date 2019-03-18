@@ -33,13 +33,14 @@ mtlaney/puppet-pipeline-test:
     - export NVM_DIR=$HOME/.nvm 
     - . $NVM_DIR/nvm.sh  # This loads nvm
     - nvm install node
+    - sudo apt-get -y install npm
     - sudo apt install -y chromium-browser
 
 
-  # PostInstall:
-  #   - echo "Begin PostInstall"
-  #   - sudo apt-get -y install npm
-  #   - npm install
+  Build:
+    - echo "Begin Build"
+    # - sudo apt-get -y install npm
+    - npm install
     
   Env:
     - PORT: '3000'
