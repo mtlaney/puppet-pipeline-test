@@ -1,26 +1,7 @@
-# mtlaney/puppet-pipeline-test:
-#   Build:
-
-#   PkgInclude:
-#     - '*'
-#   PreInstall:
-#     - npm install npm -g
-#     - npm install
-#     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-#     - source ~/.nvm/nvm.sh
-#     - nvm install v10.15.0
-#   Env:
-#     - PORT: '3000'
-#   Exec:
-#     - source ~/.nvm/nvm.sh
-#     - nvm use v10.15.0
-#     - ng test
-#     - npm start
-    # comment
-
-
-
 mtlaney/puppet-pipeline-test:
+  # Distelli Manifest example
+  # this example assumes the build and deploy servers are:
+  # Ubuntu 14.04
 
   PreRelease:
     - echo "---Beginning PreRelease---"
@@ -28,9 +9,11 @@ mtlaney/puppet-pipeline-test:
     - echo "-Updating apt-get-"
     - sudo apt-get -y update
     - echo "-Installing nodejs-"
-    - sudo apt-get -y install nodejs
-    - echo "-Installing npm-"
-    - sudo apt-get -y install npm
+    - sudo apt-get purge nodejs npm
+    - sudo apt-get install -y python-software-properties python g++ make software-properties-common
+    - sudo add-apt-repository ppa:chris-lea/node.js
+    - sudo apt-get update
+    - sudo apt-get install nodejs
     - echo "--Building--"
     - sudo npm install
     - echo "--Testing--"
@@ -48,15 +31,11 @@ mtlaney/puppet-pipeline-test:
     - echo "-Updating apt-get-"
     - sudo apt-get -y update
     - echo "-Installing nodejs-"
-    - sudo apt-get -y install nodejs
-    - echo "-Installing npm-"
-    - sudo apt-get -y install npm
-    - sudo npm update npm -g
-    # - echo "-Installing nvm-"
-    # - curl -sL https://deb.nodesource.com/setup | sudo bash -
-    # - sudo apt-get install -y nodejs
-    # - source ~/.nvm/nvm.sh
-    # - nvm install v10.15.0
+    - sudo apt-get purge nodejs npm
+    - sudo apt-get install -y python-software-properties python g++ make software-properties-common
+    - sudo add-apt-repository ppa:chris-lea/node.js
+    - sudo apt-get update
+    - sudo apt-get install nodejs
 
   PostInstall:
     - echo "Begin PostInstall"
