@@ -20,13 +20,13 @@ mtlaney/puppet-pipeline-test:
     - nvm install node
     - sudo apt install -y chromium-browser
     - sudo apt-get -y install npm
-    - npm i http-errors
+    - npm ci
 
 
   PostInstall:
     - echo "Begin PostInstall"
     # - sudo apt-get -y install npm
-    - npm ci
+    
     
   Env:
     - PORT: '3000'
