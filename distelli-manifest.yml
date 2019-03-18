@@ -1,12 +1,7 @@
 mtlaney/puppet-pipeline-test:
-  # Distelli Manifest example
-  PkgInclude:
-    - '*'
+BuildWith: 
 
-  PkgExclude:
-    - node_modules/
-
-  PreInstall:
+PreBuild: 
     - echo "---Begining PreInstall---"
     - echo "--Installing deploy dependencies--"
     - echo "-Updating apt-get-"
@@ -20,15 +15,13 @@ mtlaney/puppet-pipeline-test:
     - nvm install node
     - sudo apt install -y chromium-browser
     - sudo apt-get -y install npm
-
-
-  PostInstall:
+Build: 
     - echo "Begin PostInstall"
     # - sudo apt-get -y install npm
-    - sudo npm install
-    
-  Env:
-    - PORT: '3000'
-    
-  Exec:
-    - /usr/bin/nodejs app.js
+    - npm install
+
+PkgInclude: 
+    - '*'
+
+PkgExclude:
+    - node_modules/
