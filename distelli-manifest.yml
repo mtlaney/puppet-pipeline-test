@@ -33,6 +33,7 @@ mtlaney/puppet-pipeline-test:
     - export NVM_DIR=$HOME/.nvm 
     - . $NVM_DIR/nvm.sh  # This loads nvm
     - nvm install node
+    - npm config delete prefix
     - sudo apt-get -y install npm
     - sudo apt install -y chromium-browser
 
