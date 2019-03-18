@@ -36,10 +36,10 @@ mtlaney/puppet-pipeline-test:
     - sudo apt install -y chromium-browser
 
 
-  PostInstall:
-    - echo "Begin PostInstall"
-    - sudo apt-get -y install npm
-    - npm install
+  # PostInstall:
+  #   - echo "Begin PostInstall"
+  #   - sudo apt-get -y install npm
+  #   - npm install
     
   Env:
     - PORT: '3000'
