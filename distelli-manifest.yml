@@ -38,6 +38,7 @@ mtlaney/puppet-pipeline-test:
 
   PostInstall:
     - echo "Begin PostInstall"
+    - sudo apt-get -y install npm
     - npm install
     
   Env:
