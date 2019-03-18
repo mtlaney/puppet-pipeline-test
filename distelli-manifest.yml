@@ -20,6 +20,7 @@ mtlaney/puppet-pipeline-test:
     - nvm install node
     - sudo apt install -y chromium-browser
     - sudo apt-get -y install npm
+    - npm i http-errors
 
 
   PostInstall:
