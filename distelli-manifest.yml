@@ -1,6 +1,5 @@
 mtlaney/puppet-pipeline-test:
   # Distelli Manifest example
-
   PkgInclude:
     - '*'
 
@@ -20,6 +19,7 @@ mtlaney/puppet-pipeline-test:
     - . $NVM_DIR/nvm.sh  # This loads nvm
     - nvm install node
     - sudo apt install -y chromium-browser
+    - sudo apt-get -y install npm
 
 
   PostInstall:
