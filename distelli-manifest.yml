@@ -6,11 +6,11 @@ mtlaney/puppet-pipeline-test:
   PreRelease:
     - echo "---Beginning PreRelease---"
     - echo "--Installing build dependencies--"
-    - echo "-Updating apt-get-"
-    - sudo apt-get -y update
-    - sudo apt-get install curl
+    - echo "-Updating yum-"
+    - sudo yum -y update
+    - sudo yum install curl
     - echo "-Installing nodejs-"
-    - sudo apt-get purge nodejs npm
+    - sudo yum purge nodejs npm
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
     - nvm install node
     - echo "--Building--"
@@ -26,11 +26,11 @@ mtlaney/puppet-pipeline-test:
   PreInstall:
     - echo "---Begining PreInstall---"
     - echo "--Installing deploy dependencies--"
-    - echo "-Updating apt-get-"
-    - sudo apt-get -y update
-    - sudo apt-get install curl
+    - echo "-Updating yum-"
+    - sudo yum -y update
+    - sudo yum install curl
     - echo "-Installing nodejs-"
-    - sudo apt-get purge nodejs npm
+    - sudo yum purge nodejs npm
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
     - nvm install node
     - export CHROME_BIN=/usr/bin/chromium-browser
