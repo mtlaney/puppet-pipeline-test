@@ -1,5 +1,4 @@
 mtlaney/puppet-pipeline-test:
-
   # Distelli Manifest example
   PreRelease:
     - echo "---Beginning PreRelease---"
@@ -12,6 +11,9 @@ mtlaney/puppet-pipeline-test:
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
     - nvm install node
     - sudo apt-get -y install npm
+    - echo "--Building--"
+    - npm install
+    - echo "--Testing--"
 
   PkgInclude:
     - '*'
@@ -28,12 +30,17 @@ mtlaney/puppet-pipeline-test:
     - echo "-Installing nodejs-"
     - sudo apt-get purge nodejs npm
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+    - export NVM_DIR=$HOME/.nvm 
+    - . $NVM_DIR/nvm.sh  # This loads nvm
     - nvm install node
+    - sudo apt install -y chromium-browser
+
+
+  PostInstall:
+    - echo "Begin PostInstall"
     - sudo apt-get -y install npm
-
-  Build: 
     - npm install
-
+    
   Env:
     - PORT: '3000'
     
