@@ -57,8 +57,9 @@ mtlaney/puppet-pipeline-test:
 
   PostInstall:
     - echo "Begin PostInstall"
+    - npm test
     # - sudo apt-get -y install npm
-    - sudo npm install
+    - npm install
     
   Env:
     - PORT: '3000'
