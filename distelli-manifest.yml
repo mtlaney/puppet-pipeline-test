@@ -7,30 +7,34 @@ mtlaney/puppet-pipeline-test:
     - echo "-Updating apt-get-"
     - sudo apt-get -y update
     - sudo apt-get -y install curl
-    - echo "------THIS IS THE OLD NODE VERSION-----------"
+    - echo "-Installing nodejs-"
+    - sudo apt-get -y purge nodejs npm
+    - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+    - export NVM_DIR=$HOME/.nvm 
+    - . $NVM_DIR/nvm.sh  # This loads nvm
+    - echo "--------------------new node version -------------------------"
+    - nvm install node
     - node -v
-    # - sudo apt-get -y purge nodejs npm
-    - curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-    - sudo apt-get install -y nodejs
-    # - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-    # - export NVM_DIR=$HOME/.nvm 
-    # - . $NVM_DIR/nvm.sh  # This loads nvm
-    # - nvm install node
-    - echo "------THIS IS THE NEW NODE VERSION-----------"
-    - node -v
-    - sudo apt-get -y install npm
-    - echo "------THIS IS THE CURRENT NPM VERSION-----------"
-    - node -v
+    - nvm install npm
+    - echo "--------------------new node version -------------------------"
     - npm -v
-    - sudo apt-get -y install chromium-browser
-    # - sudo apt-get -y install npm
+    - sudo apt install -y chromium-browser
+
   Build:
     - echo "Begin PostInstall"
     # - sudo apt-get -y install npm
     - sudo npm install
-    - nodejs app.js
+    - /usr/bin/nodejs app.js
 
   PkgInclude:
     - '*'
+
   PkgExclude:
+    - node_modules/
+
+
+  # new garbage below
+
+    
+
 
