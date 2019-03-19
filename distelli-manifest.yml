@@ -57,7 +57,8 @@ mtlaney/puppet-pipeline-test:
 
   PostInstall:
     - echo "Begin PostInstall"
-    - /usr/bin/puppet-pipeline-test npm install
+    - npm install
+    - ng build --prod
     # - sudo apt-get -y install npm
     # - npm install
     
