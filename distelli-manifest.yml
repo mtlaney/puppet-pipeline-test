@@ -81,5 +81,5 @@ mtlaney/puppet-pipeline-test:
     - PORT: '3000'
     
   Exec:
-    - /usr/bin/puppet-pipeline-test app.js
+    - /usr/bin/nodejs app.js
 
