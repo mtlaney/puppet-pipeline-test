@@ -1,7 +1,45 @@
-mtlaney/puppet-pipeline-test:
+# mtlaney/puppet-pipeline-test:
 
-  BuildWith:
-  PreBuild:
+#   BuildWith:
+#   PreBuild:
+#     - echo "---Begining PreInstall---"
+#     - echo "--Installing deploy dependencies--"
+#     - echo "-Updating apt-get-"
+#     - sudo apt-get -y update
+#     - sudo apt-get -y install curl
+#     - echo "-Installing nodejs-"
+#     - sudo apt-get -y purge nodejs npm
+#     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+#     - export NVM_DIR=$HOME/.nvm 
+#     - . $NVM_DIR/nvm.sh  # This loads nvm
+#     - nvm install node
+#     - sudo apt install -y chromium-browser
+#     - sudo apt-get -y install npm
+#   Build:
+#     - echo "Begin PostInstall"
+#     # - sudo apt-get -y install npm
+#     - sudo npm install
+#     - /usr/bin/nodejs app.js
+
+#   PkgInclude:
+#     - '*'
+
+#   PkgExclude:
+#     - node_modules/
+
+
+  # new garbage below
+
+    
+mtlaney/puppet-pipeline-test:
+  # Distelli Manifest example
+  PkgInclude:
+    - '*'
+
+  PkgExclude:
+    - node_modules/
+
+  PreInstall:
     - echo "---Begining PreInstall---"
     - echo "--Installing deploy dependencies--"
     - echo "-Updating apt-get-"
@@ -12,29 +50,19 @@ mtlaney/puppet-pipeline-test:
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
     - export NVM_DIR=$HOME/.nvm 
     - . $NVM_DIR/nvm.sh  # This loads nvm
-    - echo "--------------------new node version -------------------------"
     - nvm install node
-    - node -v
-    - sudo apt-get -y install npm
-    - echo "--------------------new node version -------------------------"
-    - npm -v
     - sudo apt install -y chromium-browser
+    - sudo apt-get -y install npm
 
-  Build:
+
+  PostInstall:
     - echo "Begin PostInstall"
     # - sudo apt-get -y install npm
     - sudo npm install
-    - /usr/bin/nodejs app.js
-
-  PkgInclude:
-    - '*'
-
-  PkgExclude:
-    - node_modules/
-
-
-  # new garbage below
-
     
-
+  Env:
+    - PORT: '3000'
+    
+  Exec:
+    - /usr/bin/nodejs app.js
 
