@@ -60,14 +60,13 @@ mtlaney/puppet-pipeline-test:
   PostInstall:
     - sudo apt-get -y update
     - sudo apt-get -y install curl
-    - sudo apt-get -y purge nodejs npm
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
     - export NVM_DIR=$HOME/.nvm 
     - . $NVM_DIR/nvm.sh  # This loads nvm
     - nvm install node
+    - nvm use node
     - echo "--NODE VERSION BELOW--"
     - node -v
-    - npm install node-sass request@2.81.0
     - sudo apt install -y chromium-browser
     - sudo apt-get -y install npm
     - echo "Begin PostInstall"
