@@ -67,6 +67,7 @@ mtlaney/puppet-pipeline-test:
     - nvm install node
     - echo "--NODE VERSION BELOW--"
     - node -v
+    - npm install node-sass request@2.81.0
     - sudo apt install -y chromium-browser
     - sudo apt-get -y install npm
     - echo "Begin PostInstall"
