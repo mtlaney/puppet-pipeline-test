@@ -51,12 +51,16 @@ mtlaney/puppet-pipeline-test:
     - export NVM_DIR=$HOME/.nvm 
     - . $NVM_DIR/nvm.sh  # This loads nvm
     - nvm install node
+    - echo "--NODE VERSION BELOW--"
+    - node -v
     - sudo apt install -y chromium-browser
     - sudo apt-get -y install npm
 
 
   PostInstall:
     - echo "Begin PostInstall"
+    - echo "------node version -----------"
+    - node -v
     - npm install
     - ng build --prod
     # - sudo apt-get -y install npm
