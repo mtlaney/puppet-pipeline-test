@@ -7,22 +7,27 @@ mtlaney/puppet-pipeline-test:
     - echo "-Updating apt-get-"
     - sudo apt-get -y update
     - sudo apt-get -y install curl
+    - echo "------THIS IS THE OLD NODE VERSION-----------"
     - node -v
     # - sudo apt-get -y purge nodejs npm
-    - sudo apt-get -y install nodejs 
+    - curl -sL https://deb.nodesource.com/setup_10.x | sudo bash -
+    - sudo apt install nodejs 
     # - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
     # - export NVM_DIR=$HOME/.nvm 
     # - . $NVM_DIR/nvm.sh  # This loads nvm
     # - nvm install node
+    - echo "------THIS IS THE NEW NODE VERSION-----------"
     - node -v
     - sudo apt-get -y install npm
+    - echo "------THIS IS THE CURRENT NPM VERSION-----------"
+    - node -v
     - npm -v
     - sudo apt-get -y install chromium-browser
     # - sudo apt-get -y install npm
   Build:
     - echo "Begin PostInstall"
     # - sudo apt-get -y install npm
-    # - sudo npm install
+    - sudo npm install
     - nodejs app.js
 
   PkgInclude:
