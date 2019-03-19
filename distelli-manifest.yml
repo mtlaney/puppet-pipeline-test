@@ -15,7 +15,7 @@ mtlaney/puppet-pipeline-test:
     - echo "--------------------new node version -------------------------"
     - nvm install node
     - node -v
-    - nvm install npm
+    - sudo apt-get -y install npm
     - echo "--------------------new node version -------------------------"
     - npm -v
     - sudo apt install -y chromium-browser
