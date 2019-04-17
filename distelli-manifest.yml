@@ -40,7 +40,7 @@ mtlaney/puppet-pipeline-test:
     - echo "------node version -----------"
     - node -v
     - npm install
-    - snyk test
+
     
   Env:
     - PORT: '3000'
