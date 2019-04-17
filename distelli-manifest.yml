@@ -1,36 +1,4 @@
-# mtlaney/puppet-pipeline-test:
-
-#   BuildWith:
-#   PreBuild:
-#     - echo "---Begining PreInstall---"
-#     - echo "--Installing deploy dependencies--"
-#     - echo "-Updating apt-get-"
-#     - sudo apt-get -y update
-#     - sudo apt-get -y install curl
-#     - echo "-Installing nodejs-"
-#     - sudo apt-get -y purge nodejs npm
-#     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-#     - export NVM_DIR=$HOME/.nvm 
-#     - . $NVM_DIR/nvm.sh  # This loads nvm
-#     - nvm install node
-#     - sudo apt install -y chromium-browser
-#     - sudo apt-get -y install npm
-#   Build:
-#     - echo "Begin PostInstall"
-#     # - sudo apt-get -y install npm
-#     - sudo npm install
-#     - /usr/bin/nodejs app.js
-
-#   PkgInclude:
-#     - '*'
-
-#   PkgExclude:
-#     - node_modules/
-
-
-# new garbage below
-
-    
+   
 mtlaney/puppet-pipeline-test:
 
   PkgInclude:
@@ -56,27 +24,12 @@ mtlaney/puppet-pipeline-test:
     - sudo apt install -y chromium-browser
     - sudo apt-get -y install npm
 
-
   PostInstall:
-    - sudo apt-get -y update
-    - sudo apt-get -y install curl
-    - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-    - export NVM_DIR=$HOME/.nvm 
-    - . $NVM_DIR/nvm.sh  # This loads nvm
-    - nvm install node
-    - nvm use node
-    - echo "--NODE VERSION BELOW--"
-    - node -v
-    - sudo apt install -y chromium-browser
-    - sudo apt-get -y install npm
     - echo "Begin PostInstall"
     - echo "------node version -----------"
     - node -v
     - npm install
-
-    # - ng build --prod
-    # - sudo apt-get -y install npm
-    # - npm install
+    - snyk test
     
   Env:
     - PORT: '3000'
