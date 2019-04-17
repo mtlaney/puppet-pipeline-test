@@ -8,7 +8,6 @@ mtlaney/puppet-pipeline-test:
     - node_modules/
 
   PreInstall:
-    - sudo /usr/local/bin/distelli agent install
     - echo "---Begining PreInstall---"
     - echo "--Installing deploy dependencies--"
     - echo "-Updating apt-get-"
