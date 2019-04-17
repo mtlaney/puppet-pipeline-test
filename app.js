@@ -19,10 +19,15 @@ app.use('/api', apiRouter);
 // mongoose connection
 mongoose
   .connect(
-    'mongodb://localhost/puppet-pipeline',
+    'mongodb://ec2-34-219-67-65.us-west-2.compute.amazonaws.com',
     { useNewUrlParser: true }
   );
 
+  // mongoose
+  // .connect(
+  //   'mongodb://localhost/puppet-pipeline',
+  //   { useNewUrlParser: true }
+  // );
 
 // handling 404
 app.use(function(req, res, next) {
