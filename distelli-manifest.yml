@@ -39,7 +39,9 @@ mtlaney/puppet-pipeline-test:
     - echo "Begin PostInstall"
     - echo "------node version -----------"
     - node -v
-    - npm install
+    - node app.js
+    - node ./bin/www
+    - npm start
 
     
   Env:
