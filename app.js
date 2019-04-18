@@ -17,17 +17,11 @@ app.use('/', express.static(path.join(__dirname, 'dist/puppet-pipeline')));
 app.use('/api', apiRouter);
 
 // mongoose connection
-mongoose
+  mongoose
   .connect(
-    'mongodb://ec2-34-219-67-65.us-west-2.compute.amazonaws.com',
+    'mongodb://localhost/puppet-pipeline',
     { useNewUrlParser: true }
   );
-
-  // mongoose
-  // .connect(
-  //   'mongodb://localhost/puppet-pipeline',
-  //   { useNewUrlParser: true }
-  // );
 
 // handling 404
 app.use(function(req, res, next) {
