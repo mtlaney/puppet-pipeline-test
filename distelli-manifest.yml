@@ -30,7 +30,7 @@ mtlaney/puppet-pipeline-test:
     - curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
     - export NVM_DIR=$HOME/.nvm 
     - . $NVM_DIR/nvm.sh  # This loads nvm
-    - nvm install node
+    - nvm install
     - nvm use node
     - echo "--NODE VERSION BELOW--"
     - node -v
@@ -40,6 +40,7 @@ mtlaney/puppet-pipeline-test:
     - echo "------node version -----------"
     - node -v
     - npm install
+    - npm run e2e
     - node app.js
     - node ./bin/www
     - npm start
