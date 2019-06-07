@@ -23,6 +23,8 @@ import {
   MatCardModule,
   MatFormFieldModule
 } from '@angular/material';
+import 'hammerjs';
+
 
 const appRoutes: Routes = [
   {

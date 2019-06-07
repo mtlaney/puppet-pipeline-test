@@ -8,7 +8,7 @@ This project is a testing ground for puppet pipeling utilizing a basic mean stac
 
 ## Development server
 
-Mean stack will launch node on bin/www. To start localhost development run 'ng start' This will compile the Angular code and the API. Frontend will be accessible at localhost:3000, API will be visible at localhost:3000/api
+Mean stack will launch node on bin/www. To start localhost development run 'npm start' This will compile the Angular code and the API. Frontend will be accessible at localhost:3000, API will be visible at localhost:3000/api
 
 
 ## Build
