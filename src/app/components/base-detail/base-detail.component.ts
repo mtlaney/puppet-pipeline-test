@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class BaseDetailComponent implements OnInit {
   value: any;
   matcher: any;
-  base: any;
+  base: {};
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
