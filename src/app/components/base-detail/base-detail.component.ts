@@ -8,7 +8,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./base-detail.component.css']
 })
 export class BaseDetailComponent implements OnInit {
-  base = {};
+  value: any;
+  matcher: any;
+  base: any;
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
